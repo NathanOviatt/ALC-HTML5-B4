@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Adventure Game</title>
+    </head>
+    <body>
+        <h1>Adventure Game v1.0</h1>
+        <p>Made by: Nathan Oviatt</p>
+        <script>
+            Start();
+            
+            function Start(){
+                
+                var playerName = prompt("What is your name traveller?");
+                
+                alert("Welcome to the land of Hubba Bubba Bubblegum, " + playerName);
+                
+                var startGame = confirm("Are you read to begin your adventure?");
+                
+                    if(startGame){
+                        Village();
+                    }
+                    else{
+                        alert("Goodbye!");
+                    }
+            }
+            
+            function Village(){
+                var village = prompt("You arrive at a small village. There is a blacksmith, inn, dillards, stable and several wooden homes").toLowerCase();
+                
+                switch(village){
+                        
+                    case "blacksmith":
+                        alert("The blacksmith scowls at you and mumbles something rude! You walk away intimidated.");
+                    break;
+                    case "inn":
+                        alert("You enter the old wether torn inn. The innkeeper asks what he can do for you. Rent a room. Buy food. Sit by the hearth fire.");
+                    break;
+                    case "stable":
+                        alert("The stable master warns you that all of the horsed have been stolen last night. He asks you for your help?")
+                    break;
+                    default:
+                        alert("I do not understand " + village);
+                    break;
+                        
+                        
+                              }
+            }
+            
+        </script>
+    </body>
+</html>
