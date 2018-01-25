@@ -26,26 +26,68 @@
             }
             
             function Village(){
-                var village = prompt("You arrive at a small village. There is a blacksmith, inn, dillards, stable and several wooden homes").toLowerCase();
+                var village = prompt("You arrive at a small village. There is a blacksmith, inn, stable and several wooden homes").toLowerCase();
                 
                 switch(village){
                         
                     case "blacksmith":
                         alert("The blacksmith scowls at you and mumbles something rude! You walk away intimidated.");
+                        Village();
                     break;
+                        
                     case "inn":
-                        alert("You enter the old wether torn inn. The innkeeper asks what he can do for you. Rent a room. Buy food. Sit by the hearth fire.");
+                        Inn();
                     break;
+                          
+                        
                     case "stable":
-                        alert("The stable master warns you that all of the horsed have been stolen last night. He asks you for your help?")
+                        alert("The stable master warns you that all of the horsed have been stolen last night. He asks you for your help?");
+                        Village();
                     break;
+                        
+                    case "exit":
+                        alert("Run away, chicken!  THE END");
+                    break;
+                        
                     default:
                         alert("I do not understand " + village);
+                        Village();
                     break;
-                        
-                        
                               }
+                function Inn(){
+                var inn = prompt("You enter the old weather torn inn. The innkeeper asks what he can do for you. Rent a room. Buy food. Sit by the hearth fire.").toLowerCase();
+                            
+                switch(inn){
+                                
+                    case "rent a room":
+                        alert("You have rented a room and slept through the night.");
+                    break;
+                    case "buy food":
+                        alert("You ordered a frothy brew and are now filled up to continue your journey.");
+                    break;
+                    case "sit by the hearth fire":
+                        HearthFire();
+                    break;
+                                
+                      }
+                      
+                    function HearthFire(){
+                    var hearthFire = prompt("You sit and relax by the fire. You see a shady figure sitting in the corner eyeing you down. Confront the stranger. Leave the inn. Ignore them.");
+                    
+                    switch(hearthFire){
+                            
+                        case "confront the stranger":
+                            alert("The unknown man denies your accusation. Push for answers. Leave it alone.")
+                        break;
+                        case "leave the inn":
+                            alert("You sense that this man has ban intents and leave the inn.");
+                        break;
+                                     }
+                        }
+                  }
+                    
             }
+                        
             
         </script>
     </body>
