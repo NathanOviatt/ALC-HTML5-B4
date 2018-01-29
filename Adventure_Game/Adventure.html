@@ -7,13 +7,24 @@
         <h1>Adventure Game v1.0</h1>
         <p>Made by: Nathan Oviatt</p>
         <script>
+            // Inventory System
+        var inventory = {
+            
+            sword:0,
+            knife:0,
+            bread:0,
+            meat:0,
+            fish:0,
+            goldkey:0,
+        }
+        
             Start();
             
             function Start(){
                 
                 var playerName = prompt("What is your name traveller?");
                 
-                alert("Welcome to the land of Hubba Bubba Bubblegum, " + playerName);
+                alert("Welcome to the land of Masador, " + playerName);
                 
                 var startGame = confirm("Are you read to begin your adventure?");
                 
@@ -41,8 +52,7 @@
                           
                         
                     case "stable":
-                        alert("The stable master warns you that all of the horsed have been stolen last night. He asks you for your help?");
-                        Village();
+                        Stable();
                     break;
                         
                     case "exit":
@@ -68,24 +78,68 @@
                     case "sit by the hearth fire":
                         HearthFire();
                     break;
+                    
+                    default:
+                        alert("I do not understand" + inn);
+                        Inn();
+                    break;
                                 
                       }
                       
                     function HearthFire(){
-                    var hearthFire = prompt("You sit and relax by the fire. You see a shady figure sitting in the corner eyeing you down. Confront the stranger. Leave the inn. Ignore them.");
+                    var hearthFire = prompt("You sit and relax by the fire. You see a shady figure sitting in the corner eyeing you down. Confront the stranger. Leave the inn. Ignore them. Ultimate staring contest.").toLowerCase();
                     
                     switch(hearthFire){
                             
                         case "confront the stranger":
-                            alert("The unknown man denies your accusation. Push for answers. Leave it alone.")
+                            alert("The unknown man denies your accusation. Push for answers. Leave it alone.");
                         break;
                         case "leave the inn":
                             alert("You sense that this man has ban intents and leave the inn.");
                         break;
+                        case "ignore them":
+                            alert("You act like you haven't noticed the stranger. He slowly makes his way toward you.");
+                        break;
+                        case "ultimate staring contest":
+                            alert("You didn't even last 15 seconds and die of embarrasment. THE END");
+                        break;
+                            
+                        default:
+                            alert("I do not understand" + hearthFire);
+                            HearthFire();
+                        break;
+                            
                                      }
+                        
                         }
                   }
                     
+                function Stable(){
+                var stable = prompt("The stable master warns you that the stables were stolen last night. Do you help? Help. Back to village.").toLowerCase();
+                    
+                switch(stable){
+                        
+                    case "help":
+                        alert("You choose to help the stable master. He thanks you and gives you a sharp knife to help on the way.");
+                    break;
+                    case "back to village":
+                        Village();
+                    break;
+                        
+                    default:
+                        alert("I do not understand" + stable);
+                        Stable();
+                    break;
+                        
+                             }
+                    
+                    function Help(){
+                    var help = prompt("You choose to help the stable master. he thanks you and gives you a sharp knife to help you on the way.").toLowerCase();
+                        inventory.knife ++;
+                        alert("knifes = " + inventory.knife);
+                        
+                    }
+                }
             }
                         
             
