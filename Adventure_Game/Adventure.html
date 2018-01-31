@@ -37,7 +37,7 @@
             }
             
             function Village(){
-                var village = prompt("You arrive at a small village. There is a blacksmith, inn, stable and several wooden homes").toLowerCase();
+                var village = prompt("You arrive at a small village. There is a blacksmith, inn, stable and several wooden homes.").toLowerCase();
                 
                 switch(village){
                         
@@ -102,6 +102,7 @@
                         break;
                         case "ultimate staring contest":
                             alert("You didn't even last 15 seconds and die of embarrasment. THE END");
+                            Start();
                         break;
                             
                         default:
@@ -110,17 +111,18 @@
                         break;
                             
                                      }
+                            
                         
                         }
                   }
                     
                 function Stable(){
-                var stable = prompt("The stable master warns you that the stables were stolen last night. Do you help? Help. Back to village.").toLowerCase();
+                var stable = prompt("The stable master warns you that the horses were stolen last night. Do you help? Help. Back to village.").toLowerCase();
                     
                 switch(stable){
                         
                     case "help":
-                        alert("You choose to help the stable master. He thanks you and gives you a sharp knife to help on the way.");
+                        Help();
                     break;
                     case "back to village":
                         Village();
@@ -134,11 +136,39 @@
                              }
                     
                     function Help(){
-                    var help = prompt("You choose to help the stable master. he thanks you and gives you a sharp knife to help you on the way.").toLowerCase();
-                        inventory.knife ++;
-                        alert("knifes = " + inventory.knife);
+                    var help = confirm("You choose to help the stable master. he thanks you and gives you a sharp knife to help you on the way. He tells you that the thief went into the woods. You follow the trail of the thief.");
+                        if (help){
+                            inventory.knife ++;
+                            alert("knifes = " + inventory.knife);
+                            
+                            Woods();
+                        }
+                        else{
+                            Stable();
+                        }
                         
-                    }
+                    function Woods(){
+                    var woods = prompt("There is a fork in the road. Horse prints are going both left and right. The left leads to a dark damp cave, and the right leads to a river. Left. Right.").toLowerCase();
+                    
+                    switch(woods){
+                                
+                        case "left":
+                            alert("You go down the path that leads to a cave.");
+                        break;
+                        case "right":
+                            alert("You go down the path that leads to a river.");
+                        break;
+                            
+                        default:
+                            alert("I do not understand" + woods);
+                            Woods();
+                        break;
+                        
+                                    }
+                        
+                            }
+                    
+                     }
                 }
             }
                         
