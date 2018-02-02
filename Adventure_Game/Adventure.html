@@ -7,15 +7,15 @@
         <h1>Adventure Game v1.0</h1>
         <p>Made by: Nathan Oviatt</p>
         <script>
+            
             // Inventory System
         var inventory = {
-            
+            coins:0,
             sword:0,
             knife:0,
             bread:0,
             meat:0,
-            fish:0,
-            goldkey:0,
+            unconditional_love_and_respect:0,
         }
         
             Start();
@@ -24,7 +24,7 @@
                 
                 var playerName = prompt("What is your name traveller?");
                 
-                alert("Welcome to the land of Masador, " + playerName);
+                alert("Welcome to the land of , " + playerName);
                 
                 var startGame = confirm("Are you read to begin your adventure?");
                 
@@ -43,6 +43,10 @@
                         
                     case "blacksmith":
                         alert("The blacksmith scowls at you and mumbles something rude! You walk away intimidated.");
+                        
+                        inventory.unconditional_love_and_respect ++;
+                        alert("Unconditional love and respects = " + inventory.unconditional_love_and_respect);
+                        
                         Village();
                     break;
                         
