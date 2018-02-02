@@ -173,7 +173,26 @@
                         function LeftTrail(){
                         var leftTrail = alert("You go down the path that leads to a cave. You are frozen in fear as you see a troll come out of the cave.");
                             
-                            prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
+                        prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
+                            
+                            //WIP
+                        switch(leftTrail){
+                                
+                            case "fight":
+                                alert("You stand your ground as the troll quickly approaches. As he gets close, you dive to the ground and slice his leg with your knife. The troll falls to the ground defeated. Finish him. Let him live.");
+                            break;
+                            case "run":
+                                alert("The troll is much quicker than you. Hits you from behind with his club and kills you. THE END");
+                                Start();
+                            break;
+                                
+                            default:
+                                alert("I do not understand" + leftTrail);
+                                LeftTrail();
+                            break;
+                                
+                                
+                                        }    
                             
                         }
                         }
