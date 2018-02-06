@@ -53,7 +53,6 @@
                     case "inn":
                         Inn();
                     break;
-                          
                         
                     case "stable":
                         Stable();
@@ -78,13 +77,14 @@
                     break;
                     case "buy food":
                         alert("You ordered a frothy brew and are now filled up to continue your journey.");
+                        Inn();
                     break;
                     case "sit by the hearth fire":
                         HearthFire();
                     break;
                     
                     default:
-                        alert("I do not understand" + inn);
+                        alert("I do not understand " + inn);
                         Inn();
                     break;
                                 
@@ -99,7 +99,8 @@
                             alert("The unknown man denies your accusation. Push for answers. Leave it alone.");
                         break;
                         case "leave the inn":
-                            alert("You sense that this man has ban intents and leave the inn.");
+                            alert("You sense that this man has bad intents and leave the inn.");
+                            LeaveTheInn();
                         break;
                         case "ignore them":
                             alert("You act like you haven't noticed the stranger. He slowly makes his way toward you.");
@@ -110,12 +111,16 @@
                         break;
                             
                         default:
-                            alert("I do not understand" + hearthFire);
+                            alert("I do not understand " + hearthFire);
                             HearthFire();
                         break;
                             
                                      }
-                            
+                    function LeaveTheInn(){
+                    alert("You step outside and see a man holding a large bag standing in the street facing away from you. You are curious about what he is doing and what he has in the bag.");
+                        
+                        
+                    }
                         
                         }
                   }
@@ -133,7 +138,7 @@
                     break;
                         
                     default:
-                        alert("I do not understand" + stable);
+                        alert("I do not understand " + stable);
                         Stable();
                     break;
                         
@@ -164,23 +169,25 @@
                         break;
                             
                         default:
-                            alert("I do not understand" + woods);
+                            alert("I do not understand " + woods);
                             Woods();
                         break;
                         
                                     }
+                            
+                        }
+                        
                         
                         function LeftTrail(){
-                        var leftTrail = alert("You go down the path that leads to a cave. You are frozen in fear as you see a troll come out of the cave.");
+                        alert("You go down the path that leads to a cave. You are frozen in fear as you see a troll come out of the cave.");
                             
 
-                        prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
+                        var leftTrail = prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
                             
-                            //WIP
                         switch(leftTrail){
                                 
                             case "fight":
-                                alert("You stand your ground as the troll quickly approaches. As he gets close, you dive to the ground and slice his leg with your knife. The troll falls to the ground defeated. Finish him. Let him live.");
+                                FightTheTroll();
                             break;
                             case "run":
                                 alert("The troll is much quicker than you. Hits you from behind with his club and kills you. THE END");
@@ -188,18 +195,61 @@
                             break;
                                 
                             default:
-                                alert("I do not understand" + leftTrail);
+                                alert("I do not understand " + leftTrail);
                                 LeftTrail();
                             break;
                                 
                                 
                                         }    
 
-                            prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
-
+                        function FightTheTroll(){
+                        var fightTheTroll = prompt("You stand your ground as the troll quickly approaches. As he gets close, you dive to teh ground and slice his leg with your knife. The troll falls to the ground defeated. Finish him. Let him live.").toLowerCase();
+                        
+                        switch(fightTheTroll){
+                                
+                            case "let him live":
+                                LetHimLive();
+                            break;
+                            case "finish him":
+                                alert("You stab the downed troll with you knife, killing him.");
+                            break;
+                                
+                            default:
+                                alert("I do not understand " + fightTheTroll);
+                                FightTheTroll();
+                            break;
+                                            }
+                            
+                        function LetHimLive(){
+                        alert("You let the troll live, earning his unconditional love and respect.");
+                        inventory.unconditional_love_and_respect ++;
+                        alert("Unconditional love and respects = " + inventory.unconditional_love_and_respect);
+                            
+                        var letHimLive = prompt("You help the troll up and continue on your way. Up ahead you see a bandit hideout. You want to check it out, but you still want to see what's inside the cave. Bandit hideout. Cave.").toLowerCase();
+                            
+                        switch(letHimLive){
+                                
+                            case "bandit hideout":
+                                alert("You make your way to the bandit hideout hoping to find the lost horses.");
+                            break;
+                            case "cave":
+                                alert("You venture into the cave the troll was in.");
+                            break;
+                                
+                            default:
+                                alert("I do not understand " + letHimLive);
+                                LetHimLive();
+                            break;
+                                         }
+                        function BanditHideout(){
+                        var banditHideout = prompt("You go throught the trees to a bandit hideout. There is no one in sight and no horses either.").toLowerCase();
+                            
                             
                         }
+                                }
                         }
+                                    }
+                                }
                         
                             }
                     
