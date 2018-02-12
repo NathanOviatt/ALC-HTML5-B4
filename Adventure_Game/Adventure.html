@@ -22,7 +22,7 @@
                 
                 var playerName = prompt("What is your name traveller?");
                 
-                alert("Welcome to the land of Sevasmos, " + playerName);
+                alert("Welcome to the land of Agapi Kai Sevasmos, " + playerName);
                 
                 var startGame = confirm("Are you read to begin your adventure?");
                 
@@ -178,7 +178,7 @@
                                     }
                         
                         function RightTrail(){
-                        var rightTrail = prompt("You walk down the path the leads to the river. You are met with a desicion as you see")
+                        var rightTrail = prompt("You walk down the path the leads to the river. You are met with a desicion as you see the horses, but they are surrounded by trolls. Leave the horses. Fight for the horses.").toLowerCase();
                             
                             
                         }
@@ -189,8 +189,6 @@
                         
                         function LeftTrail(){
                         alert("You go down the path that leads to a cave. You are frozen in fear as you see a troll come out of the cave.");
-                            
-
                         var leftTrail = prompt("The troll spots you and charges. Fight. Run.").toLowerCase();
                             
                         switch(leftTrail){
@@ -220,7 +218,7 @@
                                 LetHimLive();
                             break;
                             case "finish him":
-                                alert("You stab the downed troll with you knife, killing him.");
+                                FinishHim();
                             break;
                                 
                             default:
@@ -229,7 +227,7 @@
                             break;
                                             }
                             
-                        function LetHimLive(){
+                            function LetHimLive(){
                         alert("You let the troll live, earning his unconditional love and respect.");
                         inventory.unconditional_love_and_respect ++;
                         alert("Unconditional love and respects = " + inventory.unconditional_love_and_respect);
@@ -251,16 +249,26 @@
                             break;
                                          }
                         function BanditHideout(){
-                        alert("You go throught the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. You search around quietly, trying not to make any noise.");
+                        alert("You go through the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. You search around quietly, trying not to make any noise.");
                         var banditHideout = prompt("While you are sneaking around the camp, you step on a stick, alerting the bandits. Stay still. Run away.").toLowerCase();
                             
                         switch(bandithideout){
                                 
                             case "stay still":
-                                alert("The bandits are aware you are here and capture you. You struggle to get away but are knocked out.");
+                                alert("The bandits are aware you are here and capture you. You struggle to get away then are knocked out.");
+                                alert("When you wake, you see the troll that you saved earlier sitting on a log next to you and all of the bandits are gone. He sees that you are awake and takes you to his cave.");
+                                alert("You find the horses there and the troll gladly gives them back. When you return to the village, the stable master greets you with glee and is very happy because of you.");
+                                inventory.unconditional_love_and_respect ++;
+                                alert("Unconditional love and respects = " + inventory.unconditional_love_and_respect);
+                                
+                                alert("Congratulations! You Won!");
+                                Start();
                             break;
                             case "run away":
                                 alert("You are chased through the woods when you fall down a hole in the ground. You are very hurt, but you escaped the bandits. As you get up, you see that you are surrounded by orcs.");
+                                alert("The orcs are merciless and they kill you immediately. THE END");
+                                Start();
+                            break;
                                 
                             default:
                                 alert("I do not understand " + banditHideout);
@@ -304,12 +312,16 @@
                                 break;
                                 case "go for the horses":
                                     alert("You make a run for the horses, dodging attacks from your pursuers. You cut the ropes on the horses and hop on one as they all run out.");
+                                    alert("You are getting overwhelmed, but you hear the roar of the troll. He starts to fight of the goblins as you escape.");
+                                    inventory.unconditional_love_and_respect ++;
+                                    
                                     alert("When all is calm, you lead them back to the village where you meet the stable master. He is very greatful for what you have done for him.");
                                     
                                     inventory.unconditional_love_and_respect ++;
                                     alert("Unconditional love and respects = " + inventory.unconditional_love_and_respect);
                                     
                                     alert("Congratulation! You have won!");
+                                    Start();
                                     
                                 default:
                                     alert("I do not understand " + getTheHorses);
@@ -319,6 +331,90 @@
                                 
                                 
                             }
+                            
+                        function FinishHim(){
+                        alert("You drive the sword into the trolls chest, killing him.");
+                        var finishHim = prompt("Up ahead you see a bandit hideout. You want to check it out, but you still want to see what's inside the cave. Spy on the bandits. Go to the cave.").toLowerCase();
+                            
+                        switch(finishHim){
+                                
+                            case "spy on the bandits":
+                                BanditHideout2();
+                            break;
+                            case "go to the cave":
+                                Cave2();
+                            break;
+                                
+                            default:
+                                alert("I do not understand " + finishHim);
+                            break;
+                                        }
+                            
+                            function Cave2(){
+                            alert("You enter the cave where the troll came from. In here you find a trail of hoofprints in the muddy floor. You sense that this could be a trap, but you go further.");
+                            var cave = prompt("You see the horses, but they are surrounded by goblins. Get the horses. Leave.").toLowerCase();
+
+                            switch(cave){
+                                
+                                case "get the horses":
+                                    GetTheHorses2();
+                                    break;
+                                case "leave":
+                                    alert("You leave the horses and return to the village in shame. You failed the stable master. THE END");
+                                    Start();
+                                    break;
+                                
+                                default:
+                                    alert("I do not understand " + cave);
+                                    break;
+                            }
+                            
+                            function GetTheHorses2(){
+                            alert("The goblins see you and you have to fight. You get your knife out and start attacking them.");
+                            var getTheHorses2 = prompt("You are struggling to hold them off, but are managing. The goblin king comes from deep within the cave. You need to get the horses, but you might not get out if you don't fight. Continue fighting. Go for the horses.").toLowerCase();
+                                
+                            switch(getTheHorses2){
+                                    
+                                case "continue fighting":
+                                    alert("You continue fighting, but there are too many of them. They overpower you, and with the help of the king, they slay you. THE END");
+                                    Start();
+                                break;
+                                case "go for the horses":
+                                    alert("You make a run for the horses, dodging attacks from your pursuers. You cut the ropes on the horses and hop on one as they all run out.");
+                                    alert("There are too many goblins and they soon overpower you, and you are unable to survive. THE END");
+                                    Start();
+                                break;
+                                    
+                                default:
+                                    alert("I do not understand " + getTheHorses2);
+                                break;
+                                                }
+                            }
+                            function BanditHideout2(){
+                            alert("You go through the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. you search around quietly, trying not to make any noise.");
+                            var banditHideout2 = prompt("While sneeking around the camp, you step on a stick, alerting the bandits. Sit still. Start running."). toLowerCase();
+                                
+                            switch(banditHideout2){
+                                    
+                                case "sit still":
+                                    alert("The bandits are aware you are here and capture you. You struggle to get away but are knocked out.");
+                                break;
+                                case "start running":
+                                    alert("You are chased through the woods when you fall down a hole in the ground. You are very hurt, but you escaped the bandits. As you get up, you see that you are surrounded by orcs.");
+                                break;
+                                    
+                                default:
+                                    alert("I do not understand " + banditHideout2);
+                                break;
+                                                 }
+                                
+                                
+                            }
+                            
+                            
+                        }
+                            
+                        
                             
                         }
                             
@@ -331,8 +427,8 @@
                     
                      }
                 
+            }
             
-                        
             
         </script>
     </body>
