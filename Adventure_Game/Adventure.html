@@ -115,8 +115,48 @@
                             
                                      }
                     function LeaveTheInn(){
-                    alert("You step outside and see a man holding a large bag standing in the street facing away from you. You are curious about what he is doing and what he has in the bag.");
+                    var leaveTheInn = prompt("You step outside and see a man holding a large bag standing in the street facing away from you. You are curious about what he is doing and what he has in the bag. Confront him. Walk away. Go back to the inn.").toLowerCase();
+                    
+                    switch(leaveTheInn){
+                            
+                        case "confront him":
+                            alert("You confront the man and ask him about his bag. He turn around and immediately kills you. THE END");
+                            Start();
+                        break;
+                        case "walk away":
+                            WalkAway();
+                        break;
+                        case "go back to the inn":
+                            alert("You decide to go back into the inn, but the man by the fire is at the door. He pulls a dagger on you and you run, but he is too quick and strikes you down. THE END");
+                            Start();
+                        break;
+                            
+                        default:
+                            alert("I do not understand " + leaveTheInn);
+                        break;
+                            
+                                      }
                         
+                        function WalkAway(){
+                        var walkAway = prompt("You ingore the man with the bag and walk down the street. You are ambushed by a bunch of thugs. Run from the thugs. Fight them.").toLowerCase();
+                        
+                        switch(walkAway){
+                                
+                            case "run from the thugs":
+                                alert("You run away from the thugs back the way you came. The man with the bag turn towards you, pulls out a sword, and kills you. THE END");
+                                Start();
+                            break;
+                            case "fight them":
+                                alert("You try to take on the thugs, but they overpower you. THE END");
+                            break;
+                                
+                            default:
+                                alert("I do not understand " + walkAway);
+                                WalkAway();
+                            break;
+                                       }
+                            
+                        }
                         
                     }
                         
@@ -183,7 +223,7 @@
                                 
                             case "leave the horses":
                                 alert("You are frightened by the trolls and leave the horses. The stable master is disappointed in you. THE END");
-                                start();
+                                Start();
                             break;
                             case "fight the trolls":
                                 alert("You decide to risk fighting the trolls to save the horses. They easily overpower you and slay you. THE END");
@@ -238,6 +278,7 @@
                                 
                             default:
                                 alert("I do not understand " + fightTheTroll);
+                                FightTheTroll();
                             break;
                                             }
                             
@@ -256,9 +297,12 @@
                                 
                             default:
                                 alert("I do not understand " + finishHim);
+                                FinishHim();
                             break;
                                         }
                             
+                            
+                        
                             function Cave2(){
                             alert("You enter the cave where the troll came from. In here you find a trail of hoofprints in the muddy floor. You sense that this could be a trap, but you go further.");
                             var cave = prompt("You see the horses, but they are surrounded by goblins. Get the horses. Leave.").toLowerCase();
@@ -299,6 +343,7 @@
                                 break;
                                                 }
                             }
+                            }
                             function BanditHideout2(){
                             alert("You go through the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. you search around quietly, trying not to make any noise.");
                             var banditHideout2 = prompt("While sneeking around the camp, you step on a stick, alerting the bandits. Sit still. Start running."). toLowerCase();
@@ -312,17 +357,18 @@
                                 case "start running":
                                     alert("You are chased through the woods when you fall down a hole in the ground. You are very hurt, but you escaped the bandits. As you get up, you see that you are surrounded by orcs.");
                                     alert("The orcs waste no time in mercilessly killing you. THE END");
+                                    Start();
                                 break;
                                     
                                 default:
                                     alert("I do not understand " + banditHideout2);
                                 break;
                                                  }
-                                
-                                
                             }
+                                
                             
                             
+                            }
                         }
                             }
                             
@@ -390,6 +436,8 @@
                             case "leave":
                                 alert("You leave the horses and return to the village in shame. You failed the stable master. THE END");
                                 Start();
+                                
+                                
                             break;
                                 
                             default:
@@ -439,11 +487,11 @@
                                     
                                 }
                         
-                            }
-                    
-                     }
+                            
                 }
+                     
             }
+            
             
             
         </script>
