@@ -31,7 +31,9 @@
                     }
                     else{
                         alert("Goodbye!");
+                        
                     }
+                
             }
             
             function Village(){
@@ -64,7 +66,9 @@
                         alert("I do not understand " + village);
                         Village();
                     break;
+                        
                               }
+                
                 function Inn(){
                 var inn = prompt("You enter the old weather torn inn. The innkeeper asks what he can do for you. Rent a room. Buy food. Sit by the hearth fire.").toLowerCase();
                             
@@ -114,6 +118,7 @@
                         break;
                             
                                      }
+                        
                     function LeaveTheInn(){
                     var leaveTheInn = prompt("You step outside and see a man holding a large bag standing in the street facing away from you. You are curious about what he is doing and what he has in the bag. Confront him. Walk away. Go back to the inn.").toLowerCase();
                     
@@ -154,6 +159,7 @@
                                 alert("I do not understand " + walkAway);
                                 WalkAway();
                             break;
+                                
                                        }
                             
                         }
@@ -161,6 +167,7 @@
                     }
                         
                         }
+                    
                   }
                     
                 function Stable(){
@@ -280,6 +287,7 @@
                                 alert("I do not understand " + fightTheTroll);
                                 FightTheTroll();
                             break;
+                                
                                             }
                             
                             function FinishHim(){
@@ -299,9 +307,8 @@
                                 alert("I do not understand " + finishHim);
                                 FinishHim();
                             break;
+                                    
                                         }
-                            
-                            
                         
                             function Cave2(){
                             alert("You enter the cave where the troll came from. In here you find a trail of hoofprints in the muddy floor. You sense that this could be a trap, but you go further.");
@@ -320,6 +327,7 @@
                                 default:
                                     alert("I do not understand " + cave);
                                     break;
+                                    
                             }
                             
                             function GetTheHorses2(){
@@ -341,9 +349,13 @@
                                 default:
                                     alert("I do not understand " + getTheHorses2);
                                 break;
+                                    
                                                 }
+                                
                             }
+                                
                             }
+                                
                             function BanditHideout2(){
                             alert("You go through the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. you search around quietly, trying not to make any noise.");
                             var banditHideout2 = prompt("While sneeking around the camp, you step on a stick, alerting the bandits. Sit still. Start running."). toLowerCase();
@@ -364,13 +376,14 @@
                                     alert("I do not understand " + banditHideout2);
                                 break;
                                                  }
-                            }
                                 
+                                        }
                             
+                                }
                             
                             }
+                            
                         }
-                            }
                             
                         function LetHimLive(){
                         alert("You let the troll live, earning his unconditional love and respect.");
@@ -392,7 +405,9 @@
                                 alert("I do not understand " + letHimLive);
                                 LetHimLive();
                             break;
+                                
                                          }
+                            
                         function BanditHideout(){
                         alert("You go through the trees to a bandit hideout. There are currently bandits there, but you don't see any horses. You search around quietly, trying not to make any noise.");
                         var banditHideout = prompt("While you are sneaking around the camp, you step on a stick, alerting the bandits. Stay still. Run away.").toLowerCase();
@@ -421,7 +436,6 @@
                                 
                                             }
                         
-                            
                         }
                             
                         function Cave(){
@@ -436,14 +450,11 @@
                             case "leave":
                                 alert("You leave the horses and return to the village in shame. You failed the stable master. THE END");
                                 Start();
-                                
-                                
                             break;
                                 
                             default:
                                 alert("I do not understand " + cave);
                             break;
-                                
                                 
                                              }
                             
@@ -475,24 +486,19 @@
                                     GetTheHorses();
                                 break;
                                     
-                                               }
+                                    }
                                 
-                                
+                                }
+                            
                             }
-                            
-
-                            
-                                }
-                        }
-                                    
-                                }
                         
-                            
+                        }
+                    
+                    }     
+                
                 }
-                     
+            
             }
-            
-            
             
         </script>
     </body>
