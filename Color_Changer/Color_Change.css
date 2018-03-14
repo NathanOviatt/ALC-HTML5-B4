@@ -35,7 +35,7 @@
         }
         
         .main input[type="radio"]:hover + .box{
-            transition:a;; .4s ease-out;
+            transition:all .4s ease-out;
             border-radius: 13px;
         }
         
@@ -131,6 +131,7 @@
         .left{
             display: flex;
             flex-direction: column;
+            grid-column: 1/2;
         }
 
 .center{
